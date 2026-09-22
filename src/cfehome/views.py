@@ -11,16 +11,13 @@ def home_page_view(request, *args, **kwargs):
     page_qs = PageVisits.objects.filter(path=request.path)
 
     my_title = "My Page"
+    html_template = "home.html"
     my_context = {
         "page_title": my_title,
         "page_visit_count": page_qs.count(),
         "percent": (page_qs.count() * 100.0) / qs.count(),
         "total_visit_count": qs.count(),
     }
-    path = request.path
-    print("path", path)
-    html_template = "home.html"
-
     PageVisits.objects.create(path=request.path)
 
     return render(request, html_template, my_context)
