@@ -66,9 +66,12 @@ INSTALLED_APPS = [
     "commando",
     "visits",
     # third-party-apps
+    "allauth_ui",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "widget_tweaks",
+    "slippers",
 ]
 
 MIDDLEWARE = [
@@ -148,9 +151,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Django Allauth Config
-ACCOUNT_LOGIN_METHODS = {'email'}
-ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
-ACCOUNT_EMAIL_VERIFICATION="mandatory"
+ACCOUNT_LOGIN_METHODS = {"username"}
+ACCOUNT_SIGNUP_FIELDS = ["email*", "username*", "password1*", "password2*"]
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "[EFS]"
 
 AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
