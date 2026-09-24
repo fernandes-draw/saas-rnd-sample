@@ -24,17 +24,15 @@ EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="Ev1629mA#")
 EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool, default=True)
 EMAIL_USE_SSL = config("EMAIL_USE_SSL", cast=bool, default=False)
 
-ADMIN_USER_NAME=config("ADMIN_USER_NAME", default="Admin user")
-ADMIN_USER_EMAIL=config("ADMIN_USER_EMAIL", default=None)
+ADMIN_USER_NAME = config("ADMIN_USER_NAME", default="Admin user")
+ADMIN_USER_EMAIL = config("ADMIN_USER_EMAIL", default=None)
 
-MANAGERS=[]
-ADMINS=[]
+MANAGERS = []
+ADMINS = []
 if all([ADMIN_USER_NAME, ADMIN_USER_EMAIL]):
     # 500 errors are emailed to these users
-    ADMINS +=[
-        (f'{ADMIN_USER_NAME}', f'{ADMIN_USER_EMAIL}')
-    ]
-    MANAGERS=ADMINS
+    ADMINS += [(f"{ADMIN_USER_NAME}", f"{ADMIN_USER_EMAIL}")]
+    MANAGERS = ADMINS
 
 
 # Quick-start development settings - unsuitable for production
