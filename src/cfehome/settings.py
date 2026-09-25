@@ -163,11 +163,7 @@ AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
-SOCIALACCOUNT_PROVIDERS = {
-    "github": {
-        "VERIFIED_EMAIL": True
-    }
-}
+SOCIALACCOUNT_PROVIDERS = {"github": {"VERIFIED_EMAIL": True}}
 
 
 # Internationalization
@@ -201,9 +197,8 @@ STATIC_ROOT = BASE_DIR / "local-cdn"
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 STORAGES = {
-    # ...
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
 
